@@ -1,4 +1,6 @@
 def palindromo(a):
+  if a is not str:
+    raise TypeError("Solo se aceptan cadenas de caracteres")
   for i in range(len(a)):
     if a[i] != a[-i-1]:
       return False

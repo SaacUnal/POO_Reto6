@@ -22,5 +22,8 @@ if __name__=='__main__':
   print("'*' Multiplicacion")
   print("'/' Division")
   a = input("Digite los numeros y despues el signo separados con comas: ").split(',')
-  op = [int(a[0]), int(a[1]), str(a[2])]
-  print(opBasicas(op))
+  try:
+    op = [int(a[0]), int(a[1]), str(a[2])]
+    print(opBasicas(op))
+  except:
+    print("Hubo un error al digitar los datos solicitados. ")

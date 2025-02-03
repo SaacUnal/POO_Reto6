@@ -7,6 +7,9 @@ def suma(a):
 
 if __name__=='__main__':
   a = input("Digite los numeros separados por comas: ").split(',')
-  a = [int(n) for n in a]
-  s = suma(a)
-  print(s)
+  try:
+    a = [int(n) for n in a]
+    s = suma(a)
+    print(s)
+  except(ValueError, TypeError):
+    print("Error. Ingrese los datos nuevamente.")

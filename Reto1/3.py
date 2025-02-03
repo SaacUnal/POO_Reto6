@@ -15,6 +15,10 @@ def primos(a):
 
 if __name__=='__main__':
   a = input("Digite los numeros separados por comas: ").split(',')
-  a = [int(n) for n in a]
-  p = primos(a)
-  print(p)
+  try:
+    a = [int(n) for n in a]
+    p = primos(a)
+    print(p)
+  except ValueError as ve:
+    print("Hay datos que generan conflictos. ")
+  
