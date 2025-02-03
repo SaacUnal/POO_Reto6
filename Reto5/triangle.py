@@ -1,6 +1,6 @@
 from shape.shape import Shape, Point
 
-# Teniendo en cuenta que el primer vertice es el apice y los otros dos las bases
+# The first vertex is the apex and the second is the base
 class Triangle(Shape):
   def __init__(self, vertices:list[Point], is_regular:bool):
     super().__init__(vertices, is_regular)
@@ -36,7 +36,7 @@ class Scalene(Triangle):
   def __init__(self, vertices:list[Point]):
     super().__init__(vertices, is_regular=False)
 
-  def compute_height(self): # Sistema de doble ecuacion
+  def compute_height(self): # Hard
     height = 0
     return height
   

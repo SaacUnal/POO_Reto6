@@ -1,5 +1,5 @@
 class Point:
-  def __init__(self, x:float, y:float): # Saliendome un poco del UML
+  def __init__(self, x:float, y:float):
     self.x = x
     self.y = y
 
@@ -17,7 +17,16 @@ class Line:
 
 class Shape:
   def __init__(self, vertices:list[Point], is_regular:bool, ):
+    # If the input's have the wrong types or values
+    if vertices is not list:
+      raise TypeError("The type is wrong. It has to be a list of points. ")
+    for v in vertices:
+      if v is not Point():
+        raise ValueError("The values are wrong. They have to be points. ")
     self.vertices = vertices
+
+    if is_regular is not bool:
+      raise TypeError("The type is wrong. It has to be a boolean. ")
     self.is_regular = is_regular
   
   def compute_edges(self):
@@ -28,11 +37,12 @@ class Shape:
       edges.append(Line(x, y, Point.compute_distance(x, y)))
     self.edges = edges
   
+  # For the sake of the polymorphism
   def compute_area(self):
-    raise NotImplementedError("Subclases has to implement compute_area() ")
+    raise NotImplementedError("Subclases have to implement compute_area() ")
 
   def compute_perimeter(self):
-    raise NotImplementedError("Subclases has to implement compute_perimeter() ")
+    raise NotImplementedError("Subclases have to implement compute_perimeter() ")
 
   def compute_inner_angles(self):
-    raise NotImplementedError("Subclases has to implement compute_inner_angles() ")
+    raise NotImplementedError("Subclases have to implement compute_inner_angles() ")
